@@ -19,6 +19,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
 header{
     display: flex;
@@ -27,7 +28,7 @@ header{
     align-items: center;
     width: 100%;
     /* width: 1280px; */
-    height: 114px;
+    height: 110px;
     background: #FFFFFF;
     box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12);
     padding: 0 40px;
@@ -62,33 +63,61 @@ nav button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    align-items: end;
+    gap: 6px;
     background: none;
     border: none;
 }
 button span {
     width: 100%;
     background: #023651;
-    height: 5px;
+    height: 3px;
     display: flex;
     border-radius: 10px;
     transition: all .6s ease;
     position: relative;
 }
+/* button span:nth-child(2){
+    width: 90%;
+}
+button span:nth-child(3){
+    width: 80%;
+} */
 .nav{
-    width: 50%;
-    /* height: 200px; */
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end; */
     position: absolute;
-    margin-top: 390px;
-    display: none;
-    background: rgb(0, 0, 0);
+    transform: translateX(100%);
+    appearance: none;
+    margin-top: 730px;
+    visibility: hidden;
+    background: rgb(0, 0, 0,0.7);
     right: 0;
+    transition: all .9s ease;
     /* padding: 400px 0; */
+}
+.menucontent{
+    background: rgb(201, 196, 196);
+    width: 50%;
+    position: relative;
+    /* right: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* top: 0; */
+    /* left: 100%; */
+}
+#menu.shownav {
+    display: block;
+    transform: translate(0);
+    margin-top: 730px;
+    visibility:visible;
+    /* position: absolute; */
+    z-index: -100;
+    
 }
 .nav ul{
     display: block;
@@ -104,22 +133,24 @@ button span {
 .nav .register a{
     font-size: 30px;
 }
+
 #hamburger.shownav span:nth-child(1){
     transform: rotate(45deg);
-    width: 60px;
-    height: 6px;
-    top: 15px;
+    /* width: 60px; */
+    height: 4px;
+    top:9px;
 }
 #hamburger.shownav span:nth-child(2){
     transform: translateX(20px);
+    width: 70%;
     opacity: 0;
 }
 #hamburger.shownav span:nth-child(3){
     transform: rotate(-40deg);
     right: 2px;
-    bottom: 17px;
-    height: 6px;
-    width: 60px;
+    bottom: 9px;
+    height: 4px;
+    /* width: 60px; */
 }
 nav ul{
     display: flex;
@@ -154,9 +185,7 @@ nav .register{
     /* position: absolute; */
     display: none;
 }
-#menu.shownav {
-    display: block;
-}
+
 .register a{
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
@@ -183,6 +212,8 @@ main .home{
     max-height: 100%;
     height: 732px;
     display: flex;
+    position: relative;
+    z-index: -1;
     /* justify-content: center; */
     /* align-items: center; */
 }
@@ -921,6 +952,12 @@ hr{
         line-height: 25px;
     }
     header nav .nav{
+        display: none;
+        visibility: hidden;
+        appearance: none;
+    }
+    #menu.shownav{
+        /* visibility: hidden; */
         display: none;
     }
     .register{

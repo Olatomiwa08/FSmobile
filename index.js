@@ -23,3 +23,9 @@ hamburger.addEventListener("click",function(){
     menu.classList.toggle("shownav")
     register.classList.toggle("shownav")
 })
+
+window.onscroll =  () =>{
+    hamburger.classList.remove("shownav")
+    menu.classList.remove("shownav")
+    register.classList.remove("shownav")
+}
