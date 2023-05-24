@@ -5,28 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <!-- <div class="logo">
-                <img src="/image/logo.png">
-                <h1>FUEL STATION ONLIINE</h1>
-            </div> -->
-            <nav role="navigation">
-                <div class="logo">
+        <header class="desktop">
+           <div class="logo">
                     <img src="/image/logo.png">
                     <h1>FUEL STATION ONLIINE</h1>
                 </div>
-                <button id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-              <!-- <div class="nav"> -->
+            <nav class="desktop">
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">About us</a></li>
@@ -37,51 +29,63 @@
                     <a href="#">Login</a>
                     <a href="#">Register</a>
                 </div>
-              <!-- </div> -->
-              <div class="nav"  id="menu">
-                    <div class="menucontent">
-                        <ul>
-                            <li><a href="#" class="active">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        <div class="register" id="register">
-                            <a href="#">Login</a>
-                            <a href="#">Register</a>
-                        </div>
-                    </div>
-                 </div>
+        </header>
+        <header id="mainHeader">
+            <div class="logo">
+                <img src="/image/logo.png">
+                <h1>FUEL STATION ONLIINE</h1>
+            </div>
+            <div class="menuButtonContainer" id="toggle-btn">
+                <span class="ham"></span>
+            </div>
+            <nav class="navbar">
+                <ul class="navlist">
+                    <li class="navitem"><a href="#" class="navlink">Home</a></li>
+                    <li class="navitem"><a href="#" class="navlink">About</a></li>
+                    <li class="navitem"><a href="#" class="navlink">Service</a></li>
+                    <li class="navitem"><a href="#" class="navlink">Contact</a></li>
+                </ul>
+                <div class="logReg mobile">
+                     <a href="#" class="login">Login</a>
+                     <a href="#" class="reg">Register</a>
+                </div>
             </nav>
+            <div class="logReg desktop">
+                 <a href="#" class="login">Login</a>
+                 <a href="#" class="reg">Register</a>
+            </div>
+    
+    
+    
         </header>
         <main>
             <section class="home">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+                <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> -->
                     <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                      <li data-target="#myCarousel" data-slide-to="1"></li>
-                      <li data-target="#myCarousel" data-slide-to="2"></li>
-                      <li data-target="#myCarousel" data-slide-to="3"></li>
-                    </ol> 
-                
+                    <!-- <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      </div>
+                 -->
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                      <div class="item active">
+                    <!-- <div class="carousel-inner">
+                      <div class="carousel-item active">
                         <img src="/image/desktop-landpage-bg.png" alt="Chania">
                       </div>
                 
-                      <div class="item two">
+                      <div class="carousel-item two">
                         <img src="/image/59501983_906.jpg" alt="Chania">
                       </div>
                     
-                      <div class="item three">
+                      <div class="carousel-item three">
                         <img src="/image/photo-1618521801226-77d814ca8eee.avif" alt="Flower">
                       </div>
-                      <div class="item four">
+                      <div class="carousel-item four">
                         <img src="/image/desktop-landpage-bg4.png" alt="Flower" >
                       </div>
-                    </div>
+                    </div> -->
                 
                     <!-- Left and right controls -->
                     <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -92,7 +96,38 @@
                       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a> -->
-                  </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="image/desktop-landpage-bg.png" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="image/59501983_906.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="/image/photo-1618521801226-77d814ca8eee.avif" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="/image/desktop-landpage-bg4.png" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button> -->
+                      </div>
+                      
+                  <!-- </div> -->
                 <div class="homecontent">
                     <h1>Building Smart </h1>
                     <h1 class="right">Stations</h1>
@@ -251,19 +286,19 @@
                         <img src="/icons/desktop-online-icon.png" class="width" alt="">
                         <h1>Get Online</h1>
                         <p>Because of the confidential nature of your data, you are required to create an account and provide basic information about your company. Click here for more information.</p>
-                        <a href="#"><img src="/icons/desktop-arrow.png" alt=""></a>
+                        <a href="#myMmymodal1" data-bs-toggle="modal" data-bs-target><img src="/icons/desktop-arrow.png" alt=""></a>
                     </div>
                     <div class="help">
                         <img src="/icons/desktop-cogwheels-icon.png" alt="">
                         <h1>Configure</h1>
                         <p>Setup products, users i.e. fuel station managers, fuel stations and their resources such as underground tanks and pumps. Click here for more information.</p>
-                        <a href="#"><img src="/icons/desktop-arrow.png" alt=""></a>
+                        <a href="#myMmymodal2" data-bs-toggle="modal" data-bs-target><img src="/icons/desktop-arrow.png" alt=""></a>
                     </div>
                     <div class="help">
                         <img src="/icons/desktop-thumbsup-icon.png" alt="">
                         <h1>Enjoy</h1>
                         <p>Record your meter readings, product deliveries, dipstick measurements and cash lodgements. Generate business reports and receive daily business insights. Click here for more information.</p>
-                        <a href="#"><img src="/icons/desktop-arrow.png" alt=""></a>
+                        <a href="#myMmymodal3" data-bs-toggle="modal" data-bs-target><img src="/icons/desktop-arrow.png" alt=""></a>
                     </div>
                 </div>
                 <div class="question">
@@ -315,9 +350,155 @@
                 </div>
             </div>
         </footer>
+        <!-- The Modal -->
+  <div class="modal fade" id="myMmymodal1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">STEP 1: USER REGISTRATION</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+            <p>
+              As a dealer or company representative, you can setup an account to manage all your filing stations by providing basic information such as your name and a valid email address. This email address is your user Id to log in to filling station online.
+          </p>
+          <p>
+              You also need to provide a password to your account. We recommend that you enter a very strong password and keep you userId  and password confidential at all time.
+          </p>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+  
+  </div>
+  <div class="modal fade" id="myMmymodal2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 3000;">
+    <div class="modal-dialog  modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">STEP 2: COMPANY INFORMATION</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <!-- Modal body -->
+         
+          <div class="modal-body" >
+            <p>
+                The first time you log in, you will be required to provide the following: <br>
+                </p><ul>
+                    <li> Add Company Information.
+                    </li><li> Setup Products
+                    </li><li> Add Users (Station Manger)
+                    </li><li> Add Stations
+                </li></ul>
+
+                <b> Company information: </b>
+                <br>You may provide the following information
+                <blockquote>
+                    <ul>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-briefcase"></i><strong> <em>Company name:</em></strong> Provide the company name </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-map-marker"></i><strong><em> Address:</em></strong> This the company head office address </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-phone"></i> <strong><em> Phone number:</em> </strong>please enter a phone that can receive sms for daily business summary. Enter the number in international format e.g. For 09033717381 enter the number as +2349033717381 </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-phone-alt"></i><strong><em> Fax number:</em></strong> Provide the fax number </li>
+                        <li style="list-style-type: none"> <i class="icon icon-bitcoin"></i><strong><em> Commission:</em></strong> This is the amount (in your currency) of commission you receive on 1 litter of fuel. The default value is 1.3 which is the amount of commission for selling 1 litter of fuel in Nigeria (Naira) </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-time"></i>	<strong><em>Opening time:</em></strong> This will be the opening time for all your stations.  </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-time"></i>	<strong><em>Closing time"</em></strong> for all stations </li>
+                        <li style="list-style-type: none"> <i class="icon icon-money"></i>	<strong><em>Currency:</em></strong> Select your local currency </li>
+                        <li style="list-style-type: none"> <i class="glyphicon glyphicon-calendar"></i>	<strong><em>Decimal place:</em></strong> Select the level of precision for calculations. </li>
+                    </ul>
+
+                </blockquote>
+            <p></p>
+
+            <p>
+                <strong>Manage Products:</strong>
+                <br>
+                You are required to setup products that will be available to all your station. You can do this by selecting products from our predefined list and give them your own names. For example you can select PMS from our list and name it Petro or Gas depending on the local nomenclature for the product. Also important is the product price per litre in your local currency.
+            </p>
+            <p>
+                <strong>Application Users:</strong>
+                <br>
+                If you have more than one filling stations or you want to give access to other users, you can create the users by entering their basic information.  You need to enter the user names <em>(First name and last name)</em>, valid email address and valid phone number. Filling station online platform will generate an id and a temporary password for the user and email the details to the user. The user will be able to change their password and log on to the system. However, creating a user does not automatically grant the user an access to any of your filling station, you will need to explicitly specify the user as the Manager of any station you want him or her to access. One user can be the manager of 1 or more stations.
+            </p>
+
+            <p>
+                <strong>Creating a Station</strong>
+                <br>
+                You can station to you account by providing the name of the station, State or region where the station is located and (optionally) the supply a Manager to the station. You or other users will then be able to configure the station later.
+            </p>
+
+            <strong>Configuring your Stations</strong>
+            <br>
+            After the initial setup, you will be directed to a page where you can provide more information to each of your station.  Station configuration includes the following
+            <ul>
+                <li>	Adding Station Address
+                </li><li>	Adding underground tanks
+                </li><li>	Adding Pumps and connecting pumps to Tanks
+            </li></ul>
+            You can also open the page by clicking on the Edit button beside the station name on your dashboard.
+
+            <p>
+                <strong>Adding Tanks</strong>
+                <br>
+                Please enter a descriptive name for your tank. We recommend that you use the same name convention that you currently use at the station. Every tank you create must be linked to a product that the tank is used for. You also need to specify the maximum capacity of the tank.
+            </p>
+
+            <p>
+                <strong>Adding Pumps</strong>
+                <br>
+                Enter a descriptive name for the pump and select the tank that the pump is connected to.
+            </p>
+        </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+  
+  </div>
+
+  <div class="modal fade" id="myMmymodal3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">STEP 3: TRANSACTIONS</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            After the initial setup and configuration, recording daily transaction as simple as :
+            <ol>
+                <li>	Record your daily meter reading
+                </li><li>	Record product delivery (if any)
+                </li><li>	Record dipping stick measurements
+                </li><li>	Record your cash lodgement.
+            </li></ol>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
     </div>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="index.js"></script>
 </body>

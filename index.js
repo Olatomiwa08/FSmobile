@@ -15,15 +15,30 @@ sr.reveal('.transactiontext p,.transactionmobile', {delay:200, origin:'left'})
 
 
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu")
-const register = document.getElementById("register")
-hamburger.addEventListener("click",function(){
-    hamburger.classList.toggle("shownav")
-    menu.classList.toggle("shownav")
-    register.classList.toggle("shownav")
-})
+// const hamburger = document.getElementById("hamburger");
+// const menu = document.getElementById("menu")
+// const register = document.getElementById("register")
+// hamburger.addEventListener("click",function(){
+//     hamburger.classList.toggle("shownav")
+//     menu.classList.toggle("shownav")
+//     register.classList.toggle("shownav")
+//     console.log('me')
+// })
 
+let menuButton = document.querySelector('#toggle-btn');
+
+let navLinks = document.querySelectorAll('.navlink');
+
+menuButton.addEventListener('click',function(){
+    document.body.classList.toggle('open_nav');
+});
+
+navLinks.forEach(navlink=>{
+
+       navlink.addEventListener('click',function(){
+        document.body.classList.remove('open_nav')
+       })
+})
 window.onscroll =  () =>{
     hamburger.classList.remove("shownav")
     menu.classList.remove("shownav")

@@ -5,10 +5,6 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-img{
-    pointer-events: none;
-    
-}
 body{
     background: white;
     height: 100%;
@@ -21,176 +17,87 @@ body{
     flex-direction: column;
     overflow: hidden;
 }
-header{
+ header.desktop{
     display: flex;
-    /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* width: 1280px; */
     height: 110px;
+    display: none;
     background: #FFFFFF;
     box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12);
     padding: 0 40px;
 }
-header .logo{
+header.desktop .logo{
     display: flex;
+    justify-content: center;
     align-items: center;
-    /* width: 40%; */
     gap: 30px;
 }
-header .logo img{
+header.desktop .logo img{
     width: 35px;
     height: 38px;
     background: #FFFFFF;
     filter: blur(0.25px)
 }
-header .logo h1{
+header.desktop .logo h1{
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 20px;
-    line-height: 30px;
     color: #023651;
+    position: relative;
+    margin: 0;
 }
-header nav{
+header.desktop nav.desktop{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-nav button{
-    width: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    gap: 6px;
-    background: none;
-    border: none;
-}
-button span {
-    width: 100%;
-    background: #023651;
-    height: 3px;
-    display: flex;
-    border-radius: 10px;
-    transition: all .6s ease;
     position: relative;
-}
-/* button span:nth-child(2){
-    width: 90%;
-}
-button span:nth-child(3){
-    width: 80%;
-} */
-.nav{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: end; */
-    position: absolute;
-    transform: translateX(100%);
-    appearance: none;
-    margin-top: 730px;
-    visibility: hidden;
-    background: rgb(0, 0, 0,0.7);
-    right: 0;
-    transition: all .9s ease;
-    /* padding: 400px 0; */
-}
-.menucontent{
-    background: rgb(201, 196, 196);
-    width: 50%;
-    position: relative;
-    /* right: 0; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* top: 0; */
-    /* left: 100%; */
-}
-#menu.shownav {
-    display: block;
-    transform: translate(0);
-    margin-top: 730px;
-    visibility:visible;
-    /* position: absolute; */
-    z-index: -100;
-    
-}
-.nav ul{
-    display: block;
-}
-.nav ul li a{
-    font-size: 40px;
-    line-height: 65px;
-}
-.nav .register {
-    display: flex;
-    position: relative;
-}
-.nav .register a{
-    font-size: 30px;
+    width: 60%;
+    /* height: 100%; */
 }
 
-#hamburger.shownav span:nth-child(1){
-    transform: rotate(45deg);
-    /* width: 60px; */
-    height: 4px;
-    top:9px;
-}
-#hamburger.shownav span:nth-child(2){
-    transform: translateX(20px);
-    width: 70%;
-    opacity: 0;
-}
-#hamburger.shownav span:nth-child(3){
-    transform: rotate(-40deg);
-    right: 2px;
-    bottom: 9px;
-    height: 4px;
-    /* width: 60px; */
-}
-nav ul{
+nav.desktop ul{
     display: flex;
-    gap: 50px;
-    display: none;
-
+    position: relative;
+    top: 9px;
+    gap: 40px;
+    /* height: 100%; */
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: last baseline;
 }
-nav ul li{
+nav.desktop ul li{
     text-align: center;
     list-style: none;
 }
 a{
     text-decoration: none;
 }
-nav ul li a{
+nav.desktop ul li a{
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    font-weight: 700;
     font-size: 18px;
-    line-height: 25px;
+    /* line-height: 25px; */
     color: #015682;
 }
-.active{
+header nav ul li a.active{
     color: #FF8A01;
 }
-nav .register{
+.register{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     gap: 40px;
-    /* position: absolute; */
-    display: none;
 }
 
 .register a{
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 18px;
-    line-height: 25px;
     color: #015682;
 }
 .register a:last-child{
@@ -207,15 +114,201 @@ nav .register{
 .register a:last-child:hover{
     border: 1px solid #015682;
     color: #FF8A01;
+} 
+
+li{
+    list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#mainHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 3000;
+}
+
+/* Hide the login and reg links on mobile */
+.logReg.desktop{
+    display: none;
+}
+
+/* Style Navbar for mobile */
+
+.navbar{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    inset: 0;
+    transform: translateX(150%);
+    transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+    /* padding: 2rem; */
+    height: 100vh;
+}
+.navbar ul{
+    position: absolute;
+    background: white;
+    padding-block-start: 2rem;
+    padding-inline-start: 2rem;
+    top:0;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+}
+
+.navbar .logReg.mobile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 5rem;
+    margin-inline: auto;
+    right:15%;
+    top:30%;
+    gap: 1rem;
+    text-align: center;
+}
+.navbar .logReg.mobile a:nth-child(2){
+       background-color: rgb(59, 59, 254);
+       width: 200px;
+       /* height: 48px; */
+       border-radius: 10px;
+       color: aliceblue;
+       text-align: center;
+       padding-block: 1rem ;
+}
+
+.navbar .ul .li{
+    list-style: none;
+}
+
+/* Hamburger styles */
+
+.menuButtonContainer{
+    /* position: absolute; */
+    background-color: transparent;
+    width: 30px;
+    right:1rem;
+    top:1rem;
+    /* height: 100%; */
+}
+.ham,.ham::before,.ham::after{
+    /* position: absolute; */
+    display: block;
+    background-color: black;
+    width: 30px;
+    height: 3px;
+}
+.ham{
+    /* position: relative; */
+}
+.ham::before{
+    content: "";
+    position: absolute;
+    margin-top:-6px ;
+    /* display: block; */
+}
+.ham::after{
+    content: "";
+    position: absolute;
+    margin-top:6px ;
+    /* display: block; */
+}
+
+/* When hamburger is active */
+.open_nav .menuButtonContainer{
+    position: relative;
+    z-index: 100;
+}
+.open_nav .navbar{
+    transform: translateX(0%);
+}
+
+.open_nav .ham{
+    transform: rotate(0.625turn) ;
+    z-index: 150;
+}
+.open_nav .ham::before{
+    transform: rotate(90deg) translateX(6px);
+    z-index: 150;
+}
+.open_nav .ham::after{
+    opacity: 0;
+}
+#mainHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12);
+    padding: 0 40px;
+}
+#mainHeader .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#mainHeader .logo img{
+    width: 35px;
+    height: 38px;
+    background: #FFFFFF;
+    filter: blur(0.25px)
+}
+#mainHeader .logo h1{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 20px;
+    color: #023651;
+    position: relative;
+    /* top: 10px; */
+}
+#mainHeader nav.desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    /* height: 100%; */
+}
+
+nav.desktop ul{
+    display: flex;
+    position: relative;
+    top: 9px;
+    gap: 40px;
+    /* height: 100%; */
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: last baseline;
+}
+nav.desktop ul li{
+    text-align: center;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav.desktop ul li a{
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    /* line-height: 25px; */
+    color: #015682;
 }
 main .home{
     max-height: 100%;
     height: 732px;
     display: flex;
     position: relative;
-    z-index: -1;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 .home .homecontent{
     background: rgba(1, 86, 130, 0.3);
@@ -228,10 +321,14 @@ main .home{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* gap: 50px; */
 }
 .homecontent h1{
-    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
 }
 .input{
     display: flex;
@@ -241,6 +338,7 @@ main .home{
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 .input .search{
     display: flex;
@@ -270,9 +368,6 @@ input::placeholder{
     font-size: 16px;
     line-height: 135.02%;
     color: rgba(255, 255, 255, 0.6);
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 .input button{
     width: 194px;
@@ -897,12 +992,9 @@ hr{
     width: 100%;
     height: 100%;
 }
-.item{
+.carousel-item{
     width: 100%;
     height: 100%;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 /* .item img{
     width: 100%;
@@ -911,62 +1003,43 @@ hr{
     object-fit: cover;
     object-position: center;
 } */
-  .item.active img{
+  .carousel-item.active img{
     height: 100%;
     max-height: min-content;
     width: 100%;
     object-fit: cover;
+    display: block;
 }
-  .item.two img{
+  .carousel-item.two img{
     height: 732px;
     width: 100%;
     object-fit: cover;
 }
-  .item.three img{
+  .carousel-item.three img{
     height: 732px;
     width: 100%;
     object-fit: cover;
 }
-  .item.four img{
+  .carousel-item.four img{
     height: 732px;
     width: 100%;
     object-fit: cover;
 }
-
+li{
+    list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
 
 
 @media (min-width:1200px){
-    nav button{
+    #mainHeader{
         display: none;
     }
-    nav ul{
+    header.desktop{
         display: flex;
-        position: relative;
-    }
-    nav .register{
-        display: flex;
-        position: relative;
-    }
-    nav ul li a{
-        font-size: 23px;
-        line-height: 25px;
-    }
-    header nav .nav{
-        display: none;
-        visibility: hidden;
-        appearance: none;
-    }
-    #menu.shownav{
-        /* visibility: hidden; */
-        display: none;
-    }
-    .register{
-        display: flex;
-        position: relative;
-    }
-    nav .register a{
-        font-size: 22px;
-        line-height: 25px;
     }
     .home h1{
         display: block;
