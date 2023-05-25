@@ -5,6 +5,7 @@ const sr = ScrollReveal ({
 })
 
 sr.reveal('header', {delay:100, origin:'top'})
+// sr.reveal('.navbar', {delay:100, origin:'top'})
 sr.reveal('.home .input', {delay:200, origin:'bottom'})
 sr.reveal('.home h1', {delay:190, origin:'left'})
 sr.reveal('.home h1.right', {delay:190, origin:'right'})
@@ -40,7 +41,6 @@ navLinks.forEach(navlink=>{
        })
 })
 window.onscroll =  () =>{
-    hamburger.classList.remove("shownav")
-    menu.classList.remove("shownav")
-    register.classList.remove("shownav")
+    document.body.classList.remove("open_nav")
+    
 }
