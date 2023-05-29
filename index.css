@@ -189,19 +189,26 @@ a{
 }
 .navbar .logReg.mobile a:nth-child(2){
        background-color: #FF8A01;
-       width: 200%;
+       width: clamp(100% ,2%, 0%);
        /* height: 48px; */
        border-radius: 10px;
        font-size: 25px;
        color: aliceblue;
        text-align: center;
        padding-block: 1.5rem ;
+       padding-inline: 1.5rem;
 }
 
-.navbar .ul .li{
+.navbar ul li{
     list-style: none;
+    width: 90%;
+    transition: all .4s ease;
 }
-
+.navbar ul li:hover{
+    background: #015682;
+    border-radius: 10px;
+    padding: 0 20px;
+}
 /* Hamburger styles */
 
 .menuButtonContainer{
@@ -220,9 +227,7 @@ a{
     height: 4px;
     border-radius: 10px;
 }
-.ham{
-    /* position: relative; */
-}
+
 .ham::before{
     content: "";
     position: absolute;
@@ -250,7 +255,7 @@ a{
     z-index: 150;
 }
 .open_nav .ham::before{
-    transform: rotate(90deg) translateX(6px);
+    transform: rotate(90deg) translateX(8px);
     z-index: 150;
 }
 .open_nav .ham::after{
@@ -386,7 +391,7 @@ main .home{
 }
 .search img{
     font-size: 40px;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 /* input clamp */
 .search input{
@@ -530,8 +535,8 @@ input::placeholder{
     /* justify-content: center; */
     align-items: flex-start;
     flex-direction: column;
-    width: 350px;
-    height: 406px;
+    width: 360px;
+    height: 420px;
     padding: 30px 40px;
     background: linear-gradient(0deg, #015682, #015682),
      linear-gradient(142.52deg, rgba(1, 86, 130, 0.25) 0%,
@@ -539,7 +544,7 @@ input::placeholder{
     box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12);
     border-radius: 29px;
     margin: 10px;
-    gap: 10px;
+    gap: 5px;
 }
 
 .box.one h3{
@@ -582,12 +587,11 @@ input::placeholder{
 }
 .box.three  h3{
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 600;
     font-size: 26px;
-    width: 108%;
     line-height: 144%;
     color: #FFFFFF;
+    text-align: left;
 }
 .box.box.three p{
     font-family: 'Nunito';
@@ -605,15 +609,15 @@ input::placeholder{
     font-style: normal;
     font-weight: 600;
     font-size: 26px;
-    line-height: 144%;
     color: #FFFFFF;
+    text-align: left;
 }
+/* used clamp to reduce overflow */
 .box.box.four p{
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 144.58%;
+    font-size: clamp(1rem,2.5vw,1rem);
     color: #FFFFFF;
     display: flex;
     justify-content:flex-end;
@@ -621,12 +625,11 @@ input::placeholder{
 }
 .box.five h3{
     font-family: 'Poppins';
-    font-style: normal;
-    width: 108%;
     font-weight: 600;
     font-size: 26px;
     line-height: 144%;
     color: #FFFFFF;
+    text-align: left;
 }
 .box.five p{
     font-family: 'Nunito';
@@ -647,19 +650,17 @@ input::placeholder{
     line-height: 144%;
     color: #FFFFFF;
 }
+/* used clamp to reduce overflow */
 .box.six p{
     font-family: 'Nunito';
-    font-style: normal;
     font-weight: 400;
-    font-size: 17px;
-    line-height: 25px;
+    font-size: clamp(.9177rem, 2.5vw, 1rem);
     color: #FFFFFF;
     display: flex;
     justify-content:flex-end;
     text-align: left;
     object-fit: contain;
     overflow:visible;
-    padding: 0 0 30px 0;
 }
 
 
@@ -729,7 +730,7 @@ input::placeholder{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 70px 0;
+    padding: 80px 0;
 }
 .metercontent{
     align-items: center;
@@ -778,8 +779,10 @@ input::placeholder{
     width: 100%;
     padding: 0 50px;
     margin: 70px 0px;
+    margin-top: 100px;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 .paymenttext p{
     font-family: 'Nunito';
@@ -789,8 +792,8 @@ input::placeholder{
     text-transform: capitalize;
     color: #000000;
     text-align: center;
-    line-height: 24px;
-    padding:  0 30px;
+    /* line-height: 24px; */
+    /* padding:  0 90px; */
 }
 .paymenttext h1{
     display: none;
@@ -804,7 +807,6 @@ input::placeholder{
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 25px;
-    line-height: 80px;
     text-transform: capitalize;
     color: #000000;
 }
@@ -830,11 +832,11 @@ input::placeholder{
     color: #FF8A01;
     font-family: 'Poppins';
     font-size: 28px;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .faqhead p{
     font-size: 20px;
-    width: 70%;
+    width: 80%;
     font-family: 'Nunito';
     color: #595757;
 }
@@ -849,7 +851,8 @@ input::placeholder{
     background: linear-gradient(143deg, rgba(255, 255, 255, 0.25) 0%,
      rgba(255, 255, 255, 0) 98%);
     box-shadow: drop-shadow(0px 0.9px 156px rgba(0, 0, 0, 0.12));
-    width: 350px;
+    max-width: 350px;
+    min-width: 210px;
     height: 390px;
     box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12);
     text-align: left;
@@ -888,7 +891,7 @@ input::placeholder{
     justify-content:right;
     align-items:end;
     position: relative;
-    top: 20%;
+    top: 19%;
 }
 .help:nth-child(3) a{
     width: 100%;
@@ -996,6 +999,9 @@ footer{
     text-decoration:underline;
     color: #FF8A01;
 }
+.logs.last p br{
+    display: none;
+}
 .footercontent{
     width: 90%;
     height: 100%;
@@ -1007,9 +1013,6 @@ footer{
 .foot{
     display: none;
 }
-hr{
-    /* display: none; */
-}
 .inter{
     display: flex;
     flex-direction: column;
@@ -1018,6 +1021,9 @@ hr{
 .inter h3{
     font-family: 'Poppins';
     text-transform: capitalize;
+}
+.contact a{
+    color: white;
 }
 .carousel{
     position: relative;
@@ -1448,18 +1454,23 @@ a{
         text-decoration:underline;
         color: #FF8A01;
     }
-    .foot{
+    .logs.last p br{
         display: block;
+    }
+    .foot {
+        display: block;
+    }
+    .foot h3{
         position: relative;
         top: 20px;
         text-align: center;
         font-family: 'Nunito';
         font-style: normal;
         font-weight: 600;
-        font-size: 20px;
-        line-height: 20px;
-        color: #FFFFFF;
+        font-size: 18px;
+        color: #FFF;
     }
+
 }
 @media (min-width:1350px){
     .about .abouthead{
@@ -1472,5 +1483,12 @@ a{
     }
     .payment img{
         width: 150%;
+    }
+}
+/* changed from display flex to grid */
+@media (min-width:1860px){
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
 }
