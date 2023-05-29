@@ -143,8 +143,10 @@ a{
     position: absolute;
     /* position: fixed; */
     background: rgba(0, 0, 0, 0.5);
-    display: flex;
+    display: flex ;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     inset: 0;
     transform: translateX(150%);
     transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
@@ -171,12 +173,15 @@ a{
     flex-direction: column;
     position: absolute;
     margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
     margin-inline: auto;
-    padding-inline-start: 4rem;
-    /* right:15%; */
+    /* padding-inline-start: 15%; */
+    margin-inline-start: 20%;
+    left:40%;
     top:30%;
     gap: 3rem;
-    /* text-align: center; */
+    text-align: center;
 }
 .navbar .logReg.mobile a:nth-child(1){
     font-size: 30px;
@@ -184,12 +189,13 @@ a{
 }
 .navbar .logReg.mobile a:nth-child(2){
        background-color: #FF8A01;
-       width: 200px;
+       width: 200%;
        /* height: 48px; */
        border-radius: 10px;
+       font-size: 25px;
        color: aliceblue;
        text-align: center;
-       padding-block: 1rem ;
+       padding-block: 1.5rem ;
 }
 
 .navbar .ul .li{
@@ -367,10 +373,6 @@ main .home{
     width: 100%;
     justify-content: center;
     align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: scroll;    
-    /* z-index: 100; */
 }
 .input .search{
     display: flex;
