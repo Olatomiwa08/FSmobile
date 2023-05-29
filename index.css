@@ -1484,9 +1484,7 @@ a{
     .payment img{
         width: 150%;
     }
-}
-/* changed from display flex to grid */
-@media (min-width:1860px){
+    /* changed from display flex to grid */
     .grid {
         display: grid;
         grid-template-columns: auto auto auto;
